@@ -38,6 +38,7 @@ namespace EFCoreNullable
 			Debug.WriteLine("// ----- Nullables ----- //");
 			Debug.WriteLine("");
 
+            // Works
 			try
 			{
 				Foo[] foos = database
@@ -51,6 +52,7 @@ namespace EFCoreNullable
 				Debug.WriteLine("First Foo load: " + e.Message);
 			}
 
+			// Works
 			try
 			{
 				database.Add(new Foo()
@@ -66,6 +68,7 @@ namespace EFCoreNullable
 				Debug.WriteLine("Create Foo without related Bar: " + e.Message);
 			}
 
+			// Works
 			try
 			{
 				Bar bar = new Bar()
@@ -88,6 +91,7 @@ namespace EFCoreNullable
 				Debug.WriteLine("Create Foo with related Bar: " + e.Message);
 			}
 
+			// Works
 			try
 			{
 				using (DbConnection connection = database.Database.GetDbConnection())
@@ -109,6 +113,7 @@ namespace EFCoreNullable
 				Debug.WriteLine("Manual Create: " + e.Message);
 			}
 
+			// Works
 			try
 			{
 				Foo[] foos = database
@@ -129,6 +134,7 @@ namespace EFCoreNullable
 			Debug.WriteLine("// ----- NullableMultiFields ----- //");
 			Debug.WriteLine("");
 
+			// Works
 			try
 			{
 				BigFoo[] foos = database
@@ -142,6 +148,7 @@ namespace EFCoreNullable
 				Debug.WriteLine("First BigFoos load: " + e.Message);
 			}
 
+            // Fails
 			try
 			{
 				database.Add(new BigFoo()
@@ -157,6 +164,7 @@ namespace EFCoreNullable
 				Debug.WriteLine("Create BigFoo without related Foo: " + e.Message);
 			}
 
+			// Fails
 			try
 			{
 				Foo foo = new Foo()
@@ -178,6 +186,7 @@ namespace EFCoreNullable
 				Debug.WriteLine("Create BigFoo with related Foo: " + e.Message);
 			}
 
+			// Works
 			try
 			{
 				using (DbConnection connection = database.Database.GetDbConnection())
@@ -199,6 +208,7 @@ namespace EFCoreNullable
 				Debug.WriteLine("Manual Create: " + e.Message);
 			}
 
+			// Fails
 			try
 			{
 				BigFoo[] foos = database
@@ -219,6 +229,7 @@ namespace EFCoreNullable
 			Debug.WriteLine("// ----- MultiFields ----- //");
 			Debug.WriteLine("");
 
+			// Works
 			try
 			{
 				TenFields[] tens = database
@@ -232,6 +243,7 @@ namespace EFCoreNullable
 				Debug.WriteLine("TenFields load: " + e.Message);
 			}
 
+			// Fails
 			try
 			{
                 database.Add(new TenFields()
@@ -255,6 +267,7 @@ namespace EFCoreNullable
 				Debug.WriteLine("Create TenFields: " + e.Message);
 			}
 
+			// Works
 			try
 			{
 				TenFields[] tens = database
@@ -268,6 +281,7 @@ namespace EFCoreNullable
 				Debug.WriteLine("Second TenFields load: " + e.Message);
 			}
 
+			// Works
 			try
 			{
                 FifteenFields[] fifteens = database
@@ -281,6 +295,7 @@ namespace EFCoreNullable
 				Debug.WriteLine("FifteenFields load: " + e.Message);
 			}
 
+			// Fails
 			try
 			{
 				database.Add(new FifteenFields()
@@ -309,6 +324,7 @@ namespace EFCoreNullable
 				Debug.WriteLine("Create FifteenFields: " + e.Message);
 			}
 
+			// Works
 			try
 			{
 				FifteenFields[] fifteens = database
@@ -322,6 +338,7 @@ namespace EFCoreNullable
 				Debug.WriteLine("Second FifteenFields load: " + e.Message);
 			}
 
+			// Works
 			try
 			{
 				TwentyFields[] twenties = database
@@ -335,6 +352,7 @@ namespace EFCoreNullable
 				Debug.WriteLine("TwentyFields load: " + e.Message);
 			}
 
+			// Fails
 			try
 			{
                 database.Add(new TwentyFields()
@@ -368,6 +386,7 @@ namespace EFCoreNullable
 				Debug.WriteLine("Create TwentyFields: " + e.Message);
 			}
 
+			// Works
 			try
 			{
 				TwentyFields[] twenties = database
